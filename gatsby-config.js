@@ -17,6 +17,14 @@ module.exports = {
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
     {
+      resolve: "gatsby-source-wordpress",
+      options: {
+        baseUrl: "http://167.71.235.245",
+        protocol: "http",
+        restApiRoutePrefix: "wp-json",
+      },
+    },
+    {
       resolve: `gatsby-plugin-manifest`,
       options: {
         name: `gatsby-starter-default`,
