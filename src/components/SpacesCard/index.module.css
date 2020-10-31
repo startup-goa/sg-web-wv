@@ -27,6 +27,7 @@
 }
 
 .title {
+  margin: 4px 0;
   font-weight: bold;
 }
 
@@ -37,14 +38,19 @@
 
 .locationIcon {
   width: 1rem;
-  fill: rgb(180, 180, 180);
+  fill: rgb(61, 61, 61);
   /* vertical-align: middle; */
+}
+
+.typeTag {
+  margin: 4px 0;
 }
 
 .pricing {
 }
 
 .facilities {
+  margin: 4px 0;
 }
 
 .contact {

@@ -3,6 +3,8 @@ import { Card, Layout, Menu, Tag } from "antd"
 import workstationImg from "./workstation.svg"
 import MapsAndFlagsIcon from "../../images/maps-and-flags.svg"
 import ContactIcon from "../../images/contact.svg"
+import PhoneCallIcon from "../../images/phone-call.svg"
+import EmailIcon from "../../images/email.svg"
 import styles from "./index.module.css"
 
 const { Header } = Layout
@@ -27,7 +29,8 @@ const SpacesCard = props => {
             </div>
           </div>
           <div className={styles.info}>
-            <Tag color="blue">Coworking</Tag>
+            <Tag color="blue" className={styles.typeTag}>Co-Working</Tag>
+            {/* <Tag color="volcano" className={styles.typeTag}>Cafe</Tag> */}
             <div className={styles.pricing}>₹ 2000 / day</div>
           </div>
           <div className={styles.info}>
@@ -37,8 +40,14 @@ const SpacesCard = props => {
               <Tag color="default">Lounge</Tag>
             </div>
             <div className={styles.contactContainer}>
-              <ContactIcon className={styles.contactIcon} />
-              9182736455, email@example.com
+              <div>
+                <PhoneCallIcon className={styles.contactIcon} />
+                9182736455
+              </div>
+              <div>
+                <EmailIcon className={styles.contactIcon} />
+                email@example.com
+              </div>
             </div>
           </div>
         </div>
