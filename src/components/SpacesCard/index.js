@@ -7,18 +7,6 @@ import styles from "./index.module.css"
 const { Header } = Layout
 
 /**
- * @type {import("antd/lib/col").ColProps}
- */
-const responsiveProps = {
-  xs: 12,
-  sm: 12,
-  md: 12,
-  lg: 12,
-  xl: 12,
-  xxl: 12,
-}
-
-/**
  *
  * @param {{
  *  thumbnail: string,
@@ -61,15 +49,7 @@ const SpacesCard = ({
         </Col>
         <Col xs={18} sm={19} md={20} lg={21} xl={22} xxl={22}>
           <Row className={styles.content}>
-            <Col
-              className={styles.info}
-              xs={16}
-              sm={16}
-              md={8}
-              lg={8}
-              xl={8}
-              xxl={8}
-            >
+            <Col xs={16} sm={16} md={8} lg={8} xl={8} xxl={8}>
               <div className={styles.title}>{name}</div>
               {address && (
                 <div className={styles.address}>
@@ -78,15 +58,7 @@ const SpacesCard = ({
                 </div>
               )}
             </Col>
-            <Col
-              className={styles.info}
-              xs={8}
-              sm={8}
-              md={8}
-              lg={8}
-              xl={8}
-              xxl={8}
-            >
+            <Col xs={8} sm={8} md={8} lg={8} xl={8} xxl={8}>
               {type === "co-working" && (
                 <Tag color="blue" className={styles.typeTag}>
                   Co-Working
@@ -99,15 +71,7 @@ const SpacesCard = ({
               )}
               <div className={styles.pricing}>{pricing}</div>
             </Col>
-            <Col
-              className={styles.info}
-              xs={24}
-              sm={24}
-              md={8}
-              lg={8}
-              xl={8}
-              xxl={8}
-            >
+            <Col xs={24} sm={24} md={8} lg={8} xl={8} xxl={8}>
               <div className={styles.facilities}>
                 {facilities?.map(facility => (
                   <Tag color="default" key={"spaces.facility." + facility}>
