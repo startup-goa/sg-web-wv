@@ -1,15 +1,15 @@
 import React from "react"
-import {Link} from 'gatsby'
-import {Row, Col, Tag, Card} from "antd"
+import { Link } from "gatsby"
+import { Row, Col, Tag, Card } from "antd"
 import { EnvironmentFilled, PhoneFilled, MailFilled } from "@ant-design/icons"
 
-import './index.css'
+import "./index.css"
 
-const EventCard = props => {
-  console.log('data', props.data)
+const PeopleCard = props => {
+  console.log("people-data", props.data)
   return (
-    <Link to={`/events/1`}>
-      <Card style={{color: "#333333", marginBottom: 4 }} hoverable >
+    <Link to={`/people/1`}>
+      <Card style={{ color: "#333333", marginBottom: 4 }} hoverable>
         <Row className="event-card">
           <Col md={3}>
             <div className="image-holder"></div>
@@ -17,7 +17,7 @@ const EventCard = props => {
           <Col md={21}>
             <Row>
               <Col md={6}>
-                <b>{props.data.date}</b>
+                <b>{props.data.title}</b>
               </Col>
               <Col md={4}>
                 <Tag color="blue">{`${props.data.type}`}</Tag>
@@ -28,10 +28,7 @@ const EventCard = props => {
               </Col>
             </Row>
             <Row>
-              <Col className="event-name" span={8}>
-                {props.data.title}
-              </Col>
-              <Col offset={2} md={6}>
+              <Col offset={10} md={6}>
                 <MailFilled style={{ marginRight: 4 }} />
                 email@startupgoa.org
               </Col>
@@ -49,4 +46,4 @@ const EventCard = props => {
   )
 }
 
-export default EventCard
+export default PeopleCard

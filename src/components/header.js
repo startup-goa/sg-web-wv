@@ -7,8 +7,8 @@ const { Header} = Layout
 
 const HeaderComponent = (props) => {
   return (
-    <Header style={{ background: "white", padding: 8, marginBottom: 24 }}>
-      <Row>
+    <Header style={{ backgroundColor: 'white', marginBottom: 24, height: 70 }}>
+      <Row style={{top: '50%'}}>
         <Col span={2}>
           <Link to="/">
             <img src={logo} height={50} />
