@@ -65,7 +65,9 @@ const SpacesCard = ({
           <div className={styles.info}>
             <div className={styles.facilities}>
               {facilities?.map(facility => (
-                <Tag color="default">{facility}</Tag>
+                <Tag color="default" key={"spaces.facility." + facility}>
+                  {facility}
+                </Tag>
               ))}
             </div>
             <div className={styles.contactContainer}>

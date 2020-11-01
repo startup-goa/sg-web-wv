@@ -52,9 +52,15 @@ const SpacesPage = () => {
           })}
         </Col>
       </Row> */}
-      <SpacesCard 
-        // thumbnail={''}
-        // name={'Numadic IOT'}
+      <SpacesCard
+        thumbnail={""}
+        name={"Numadic IOT"}
+        address={"Panaji, GA"}
+        type={"cafe"}
+        pricing={"2000 / day"}
+        facilities={["Wifi", "Eateries", "3D printing"]}
+        contactNumber={9182736455}
+        email={"email@example.com"}
       />
     </Layout>
   )
