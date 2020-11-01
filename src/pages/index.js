@@ -12,18 +12,6 @@ const IndexPage = () => {
 
   const [page, setPage] = useState('events')
 
-
-    const data = useStaticQuery(graphql`
-      query Events {
-        wordpressWpEvents {
-          id, title, date, status, type
-        }
-      }
-    `)
-
-  console.log('data', data)
-
-
   return(
     <Layout getCurrentPage={page=>setPage(page)}>
     <SEO title="StartUp Goa" />

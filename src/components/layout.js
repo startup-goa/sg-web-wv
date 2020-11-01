@@ -1,17 +1,13 @@
-/**
- * Layout component that queries for data
- * with Gatsby's useStaticQuery component
- *
- * See: https://www.gatsbyjs.com/docs/use-static-query/
- */
-
 import React, { useState } from "react"
 import PropTypes from "prop-types"
 import { useStaticQuery, graphql } from "gatsby"
-
+import {Layout} from 'antd'
 import Header from "./header"
 
-const Layout = ({ children, getCurrentPage }) => {
+import './layout.css'
+
+const CustomLayout = ({ children, getCurrentPage }) => {
+  const { Footer } = Layout
   const [currentTab, setCurrentTab] = useState(null);
 
 
@@ -27,27 +23,32 @@ const Layout = ({ children, getCurrentPage }) => {
 
   return (
     <>
-    <div style={{height: `100vh`}}>
-      <Header siteTitle={data.site.siteMetadata?.title || `Title`} getCurrentPage={(page=>getCurrentPage(page))} />
-      <div
-      >
-        <main>{children}</main>
-        <footer style={{
-          marginTop: `2rem`,
-          bottom: 0
-        }}>
-          © {new Date().getFullYear()}, 
-          {` `}
-          Startup Goa
-        </footer>
-      </div>
+      <div style={{height: '100vh'}}>
+        <Header
+          siteTitle={data.site.siteMetadata?.title || `Title`}
+          getCurrentPage={page => getCurrentPage(page)}
+        />
+        <div>
+          <main
+            style={{
+              paddingLeft: 8,
+              marginRight: 8,
+            }}
+          >
+            {children}
+          </main>
+          <footer className="footer">
+            © {new Date().getFullYear()},{` `}
+            Startup Goa
+          </footer>
+        </div>
       </div>
     </>
   )
 }
 
-Layout.propTypes = {
+CustomLayout.propTypes = {
   children: PropTypes.node.isRequired,
 }
 
-export default Layout
+export default CustomLayout
