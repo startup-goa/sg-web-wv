@@ -1,10 +1,10 @@
 import React from "react"
 import { Card, Layout, Menu, Tag } from "antd"
 import workstationImg from "./workstation.svg"
-import MapsAndFlagsIcon from "../../images/maps-and-flags.svg"
-import ContactIcon from "../../images/contact.svg"
-import PhoneCallIcon from "../../images/phone-call.svg"
-import EmailIcon from "../../images/email.svg"
+import MapsAndFlagsIcon from "../../svg/maps-and-flags.svg"
+import ContactIcon from "../../svg/contact.svg"
+import PhoneCallIcon from "../../svg/phone-call.svg"
+import EmailIcon from "../../svg/email.svg"
 import styles from "./index.module.css"
 
 const { Header } = Layout
