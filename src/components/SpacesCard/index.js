@@ -5,6 +5,7 @@ import MapsAndFlagsIcon from "../../svg/maps-and-flags.svg"
 import ContactIcon from "../../svg/contact.svg"
 import PhoneCallIcon from "../../svg/phone-call.svg"
 import EmailIcon from "../../svg/email.svg"
+import { EnvironmentFilled, PhoneFilled, MailFilled } from "@ant-design/icons"
 import styles from "./index.module.css"
 
 const { Header } = Layout
@@ -24,7 +25,7 @@ const SpacesCard = props => {
           <div className={styles.info}>
             <div className={styles.title}>Numadic IOT</div>
             <div className={styles.address}>
-              <MapsAndFlagsIcon className={styles.locationIcon} />
+              <EnvironmentFilled className={styles.locationIcon} />
               Panaji, GA
             </div>
           </div>
@@ -41,11 +42,11 @@ const SpacesCard = props => {
             </div>
             <div className={styles.contactContainer}>
               <div>
-                <PhoneCallIcon className={styles.contactIcon} />
+                <PhoneFilled className={styles.contactIcon} />
                 9182736455
               </div>
               <div>
-                <EmailIcon className={styles.contactIcon} />
+                <MailFilled className={styles.contactIcon} />
                 email@example.com
               </div>
             </div>
