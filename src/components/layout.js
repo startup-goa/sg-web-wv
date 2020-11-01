@@ -11,7 +11,7 @@ import { useStaticQuery, graphql } from "gatsby"
 
 import Header from "./header"
 
-const Layout = ({ children }) => {
+const Layout = ({ children, getCurrentPage }) => {
   const [currentTab, setCurrentTab] = useState(null);
 
 
@@ -27,22 +27,20 @@ const Layout = ({ children }) => {
 
   return (
     <>
-      <Header siteTitle={data.site.siteMetadata?.title || `Title`} />
+    <div style={{height: `100vh`}}>
+      <Header siteTitle={data.site.siteMetadata?.title || `Title`} getCurrentPage={(page=>getCurrentPage(page))} />
       <div
-        style={{
-          margin: `0 auto`,
-          maxWidth: 960,
-          padding: `0 1.0875rem 1.45rem`,
-        }}
       >
         <main>{children}</main>
         <footer style={{
-          marginTop: `2rem`
+          marginTop: `2rem`,
+          bottom: 0
         }}>
           © {new Date().getFullYear()}, 
           {` `}
           Startup Goa
         </footer>
+      </div>
       </div>
     </>
   )
