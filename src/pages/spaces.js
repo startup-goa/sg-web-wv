@@ -53,7 +53,6 @@ const SpacesPage = () => {
         </Col>
       </Row> */}
       <SpacesCard
-        thumbnail={""}
         name={"Numadic IOT"}
         address={"Panaji, GA"}
         type={"cafe"}

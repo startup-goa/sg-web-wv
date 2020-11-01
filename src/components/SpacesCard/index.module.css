@@ -6,13 +6,14 @@
 .thumbnailContainer {
   width: 5rem;
   min-height: 4.5rem;
-  background: rgb(165, 165, 165);
-  border-radius: 4px;
+  /* background: rgb(165, 165, 165); */
+  border-radius: 2px;
+  border: 1px solid rgb(165, 165, 165);
 }
 
 .thumbnail {
   width: 100%;
-  display: none;
+  /* display: none; */
 }
 
 .content {

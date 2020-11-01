@@ -1,6 +1,6 @@
 import React from "react"
 import { Card, Layout, Menu, Tag } from "antd"
-import workstationImg from "./workstation.svg"
+import coworkingImg from "./coworking.png"
 import { EnvironmentFilled, PhoneFilled, MailFilled } from "@ant-design/icons"
 import styles from "./index.module.css"
 
@@ -34,7 +34,7 @@ const SpacesCard = ({
       <div className={styles.cardBody}>
         <div className={styles.thumbnailContainer}>
           <img
-            src={workstationImg}
+            src={thumbnail || coworkingImg}
             alt="work-space-thumbnail"
             className={styles.thumbnail}
           />
