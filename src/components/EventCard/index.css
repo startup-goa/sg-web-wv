@@ -1,0 +1,11 @@
+.event-card{
+    width: 100%;
+    border-radius: 4px;
+}
+
+.image-holder{
+    width: 80px;
+    height: 80px;
+    border-radius: 4px;
+    background-color: #F0F0F0;
+}
