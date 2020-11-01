@@ -52,7 +52,10 @@ const SpacesPage = () => {
           })}
         </Col>
       </Row> */}
-      <SpacesCard />
+      <SpacesCard 
+        // thumbnail={''}
+        // name={'Numadic IOT'}
+      />
     </Layout>
   )
 }

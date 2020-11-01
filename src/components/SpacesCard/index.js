@@ -42,10 +42,12 @@ const SpacesCard = ({
         <div className={styles.content}>
           <div className={styles.info}>
             <div className={styles.title}>{name}</div>
-            <div className={styles.address}>
-              <EnvironmentFilled className={styles.locationIcon} />
-              {address}
-            </div>
+            {address && (
+              <div className={styles.address}>
+                <EnvironmentFilled className={styles.locationIcon} />
+                {address}
+              </div>
+            )}
           </div>
           <div className={styles.info}>
             {type === "co-working" && (
@@ -67,14 +69,18 @@ const SpacesCard = ({
               ))}
             </div>
             <div className={styles.contactContainer}>
-              <div>
-                <PhoneFilled className={styles.contactIcon} />
-                {contactNumber}
-              </div>
-              <div>
-                <MailFilled className={styles.contactIcon} />
-                {email}
-              </div>
+              {contactNumber && (
+                <div>
+                  <PhoneFilled className={styles.contactIcon} />
+                  {contactNumber}
+                </div>
+              )}
+              {email && (
+                <div>
+                  <MailFilled className={styles.contactIcon} />
+                  {email}
+                </div>
+              )}
             </div>
           </div>
         </div>
