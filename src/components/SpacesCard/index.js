@@ -1,10 +1,22 @@
 import React from "react"
-import { Card, Layout, Menu, Tag } from "antd"
+import { Card, Layout, Menu, Row, Col, Tag } from "antd"
 import coworkingImg from "./coworking.png"
 import { EnvironmentFilled, PhoneFilled, MailFilled } from "@ant-design/icons"
 import styles from "./index.module.css"
 
 const { Header } = Layout
+
+/**
+ * @type {import("antd/lib/col").ColProps}
+ */
+const responsiveProps = {
+  xs: 12,
+  sm: 12,
+  md: 12,
+  lg: 12,
+  xl: 12,
+  xxl: 12,
+}
 
 /**
  *
@@ -31,62 +43,96 @@ const SpacesCard = ({
 }) => {
   return (
     <Card bodyStyle={{ padding: 0 }}>
-      <div className={styles.cardBody}>
-        <div className={styles.thumbnailContainer}>
+      <Row className={styles.cardBody}>
+        <Col
+          className={styles.thumbnailContainer}
+          xs={6}
+          sm={5}
+          md={4}
+          lg={3}
+          xl={2}
+          xxl={2}
+        >
           <img
             src={thumbnail || coworkingImg}
             alt="work-space-thumbnail"
             className={styles.thumbnail}
           />
-        </div>
-        <div className={styles.content}>
-          <div className={styles.info}>
-            <div className={styles.title}>{name}</div>
-            {address && (
-              <div className={styles.address}>
-                <EnvironmentFilled className={styles.locationIcon} />
-                {address}
-              </div>
-            )}
-          </div>
-          <div className={styles.info}>
-            {type === "co-working" && (
-              <Tag color="blue" className={styles.typeTag}>
-                Co-Working
-              </Tag>
-            )}
-            {type === "cafe" && (
-              <Tag color="volcano" className={styles.typeTag}>
-                Cafe
-              </Tag>
-            )}
-            <div className={styles.pricing}>{pricing}</div>
-          </div>
-          <div className={styles.info}>
-            <div className={styles.facilities}>
-              {facilities?.map(facility => (
-                <Tag color="default" key={"spaces.facility." + facility}>
-                  {facility}
+        </Col>
+        <Col xs={18} sm={19} md={20} lg={21} xl={22} xxl={22}>
+          <Row className={styles.content}>
+            <Col
+              className={styles.info}
+              xs={16}
+              sm={16}
+              md={8}
+              lg={8}
+              xl={8}
+              xxl={8}
+            >
+              <div className={styles.title}>{name}</div>
+              {address && (
+                <div className={styles.address}>
+                  <EnvironmentFilled className={styles.locationIcon} />
+                  {address}
+                </div>
+              )}
+            </Col>
+            <Col
+              className={styles.info}
+              xs={8}
+              sm={8}
+              md={8}
+              lg={8}
+              xl={8}
+              xxl={8}
+            >
+              {type === "co-working" && (
+                <Tag color="blue" className={styles.typeTag}>
+                  Co-Working
                 </Tag>
-              ))}
-            </div>
-            <div className={styles.contactContainer}>
-              {contactNumber && (
-                <div>
-                  <PhoneFilled className={styles.contactIcon} />
-                  {contactNumber}
-                </div>
               )}
-              {email && (
-                <div>
-                  <MailFilled className={styles.contactIcon} />
-                  {email}
-                </div>
+              {type === "cafe" && (
+                <Tag color="volcano" className={styles.typeTag}>
+                  Cafe
+                </Tag>
               )}
-            </div>
-          </div>
-        </div>
-      </div>
+              <div className={styles.pricing}>{pricing}</div>
+            </Col>
+            <Col
+              className={styles.info}
+              xs={24}
+              sm={24}
+              md={8}
+              lg={8}
+              xl={8}
+              xxl={8}
+            >
+              <div className={styles.facilities}>
+                {facilities?.map(facility => (
+                  <Tag color="default" key={"spaces.facility." + facility}>
+                    {facility}
+                  </Tag>
+                ))}
+              </div>
+              <div className={styles.contactContainer}>
+                {contactNumber && (
+                  <div>
+                    <PhoneFilled className={styles.contactIcon} />
+                    {contactNumber}
+                  </div>
+                )}
+                {email && (
+                  <div>
+                    <MailFilled className={styles.contactIcon} />
+                    {email}
+                  </div>
+                )}
+              </div>
+            </Col>
+          </Row>
+        </Col>
+      </Row>
     </Card>
   )
 }

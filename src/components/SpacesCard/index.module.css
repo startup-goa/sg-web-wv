@@ -1,34 +1,28 @@
 .cardBody {
   padding: 1rem;
-  display: flex;
 }
 
 .thumbnailContainer {
-  width: 5rem;
   min-height: 4.5rem;
   /* background: rgb(165, 165, 165); */
   border-radius: 2px;
-  border: 1px solid rgb(165, 165, 165);
 }
 
 .thumbnail {
   width: 100%;
+  border: 1px solid rgb(165, 165, 165);
   /* display: none; */
 }
 
 .content {
-  /* background: rgb(149, 207, 255); */
   width: 100%;
-  margin-left: 1rem;
-  display: flex;
-  justify-content: space-between;
+  padding: 0 0.5rem;
 }
 
 .info {
 }
 
 .title {
-  margin: 4px 0;
   font-weight: bold;
 }
 
@@ -51,7 +45,6 @@
 }
 
 .facilities {
-  margin: 4px 0;
 }
 
 .contact {
