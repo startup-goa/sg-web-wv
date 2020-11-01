@@ -36,8 +36,8 @@ const SpacesPage = () => {
 
   return (
     <Layout>
-      {/* <Row gutter={16}>
-        <Col md={6}>
+      <Row>
+        {/* <Col md={6}>
           <Menu
             defaultSelectedKeys={["upcoming"]}
             style={{ borderRadius: 5, padding: 8 }}
@@ -45,22 +45,23 @@ const SpacesPage = () => {
             <Menu.Item key="upcoming">Upcoming</Menu.Item>
             <Menu.Item key="past">Past</Menu.Item>
           </Menu>
-        </Col>
-        <Col md={18}>
+        </Col> */}
+        <Col span={24}>
           {data.map(item => {
-            return <EventCard data={item.node} />
+            return (
+              <SpacesCard
+                name={"Numadic IOT"}
+                address={"Panaji, GA"}
+                type={"cafe"}
+                pricing={"2000 / day"}
+                facilities={["Wifi", "Eateries", "3D printing"]}
+                contactNumber={9182736455}
+                email={"email@example.com"}
+              />
+            )
           })}
         </Col>
-      </Row> */}
-      <SpacesCard
-        name={"Numadic IOT"}
-        address={"Panaji, GA"}
-        type={"cafe"}
-        pricing={"2000 / day"}
-        facilities={["Wifi", "Eateries", "3D printing"]}
-        contactNumber={9182736455}
-        email={"email@example.com"}
-      />
+      </Row>
     </Layout>
   )
 }
