@@ -7,27 +7,15 @@ import SEO from "../components/seo"
 import SpacesCard from "../components/SpacesCard"
 
 const IndexPage = () => {
-  const [page, setPage] = useState("events")
 
-  const data = useStaticQuery(graphql`
-    query Events {
-      wordpressWpEvents {
-        id
-        title
-        date
-        status
-        type
-      }
-    }
-  `)
+  const [page, setPage] = useState('events')
 
-  console.log("data", data)
+  return(
+    <Layout getCurrentPage={page=>setPage(page)}>
+    <SEO title="StartUp Goa" />
+    <p>Welcome</p>
 
-  return (
-    <Layout getCurrentPage={page => setPage(page)}>
-      <SEO title="StartUp Goa" />
-      <p>Welcome</p>
-    </Layout>
+  </Layout>
   )
 }
 
