@@ -13,16 +13,7 @@ const EventsPage = () => {
 
   useEffect(()=>{
     setData(apiData?.allWordpressWpEvents?.edges)
-    console.log("apiData", apiData)
   },[])
-
-  useEffect(()=>{
-    console.log('api data', data)
-  }, [data])
-
-    useEffect(() => {
-      console.log("filtered data", filteredData)
-    }, [filteredData])
 
   useEffect(()=>{
     let filteredDataTemp = []

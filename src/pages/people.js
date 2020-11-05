@@ -24,9 +24,16 @@ const PeoplePage = () => {
       allWordpressWpPeople {
         edges {
           node {
-            wordpress_id,
-            title,
-            type,
+            acf_fields {
+              email
+              linkedin_
+              twitter
+              website
+              description_
+            }
+            wordpress_id
+            title
+            type
             slug
           }
         }

@@ -6,7 +6,6 @@ import { EnvironmentFilled, PhoneFilled, MailFilled } from "@ant-design/icons"
 import './index.css'
 
 const EventCard = props => {
-  console.log('data', props.data)
   return (
     <Link to={`/events/1`}>
       <Card style={{color: "#333333", marginBottom: 4 }} hoverable >
