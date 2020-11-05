@@ -17,7 +17,7 @@ const EventCard = props => {
           <Col md={21}>
             <Row>
               <Col md={6}>
-                <b>{props.data.date}</b>
+                <b>{props.data.acf_fields.start_date}</b>
               </Col>
               <Col md={4}>
                 <Tag color="blue">{`${props.data.type}`}</Tag>
