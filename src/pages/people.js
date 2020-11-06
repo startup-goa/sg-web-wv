@@ -1,5 +1,7 @@
-import React, { useState } from "react"
+import React, { useEffect, useState } from "react"
 import { Link, useStaticQuery } from "gatsby"
+import {Row, Col} from 'antd'
+import PeopleCard from  '../components/PeopleCard/index'
 
 import Layout from "../components/layout"
 import Image from "../components/image"
@@ -7,14 +9,34 @@ import SEO from "../components/seo"
 
 const PeoplePage = () => {
 
-  const data = useStaticQuery(graphql`
+    const [data, setData] = useState([])
+
+    useEffect(()=>{
+        setData(apiData?.allWordpressWpPeople?.edges)
+    }, [])
+
+        useEffect(() => {
+          console.log('seeting people data: ', data)
+        }, [data])
+
+  const apiData = useStaticQuery(graphql`
     query People {
-      wordpressWpEvents {
-        id
-        title
-        date
-        status
-        type
+      allWordpressWpPeople {
+        edges {
+          node {
+            acf_fields {
+              email
+              linkedin_
+              twitter
+              website
+              description_
+            }
+            wordpress_id
+            title
+            type
+            slug
+          }
+        }
       }
     }
   `)
@@ -23,8 +45,15 @@ const PeoplePage = () => {
 
   return (
     <Layout>
-      <SEO title="StartUp Goa" />
-      <p>Welcome</p>
+      <SEO title="People" />
+      <Row justify="center">
+        <Col span={15}>{
+            data.map(item=>{
+                console.log('item', item)
+                return <PeopleCard data={item.node} />
+            })
+        }</Col>
+      </Row>
     </Layout>
   )
 }

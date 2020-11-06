@@ -1,15 +1,14 @@
 import React from "react"
 import {Link} from 'gatsby'
-import {Row, Col, Tag, Card, Icon} from "antd"
+import {Row, Col, Tag, Card} from "antd"
 import { EnvironmentFilled, PhoneFilled, MailFilled } from "@ant-design/icons"
 
 import './index.css'
 
 const EventCard = props => {
-  console.log('data', props.data)
   return (
     <Link to={`/events/1`}>
-      <Card style={{color: "#333333" }} hoverable >
+      <Card style={{color: "#333333", marginBottom: 4 }} hoverable >
         <Row className="event-card">
           <Col md={3}>
             <div className="image-holder"></div>
@@ -17,7 +16,7 @@ const EventCard = props => {
           <Col md={21}>
             <Row>
               <Col md={6}>
-                <b>{props.data.date}</b>
+                <b>{props.data.acf_fields.start_date}</b>
               </Col>
               <Col md={4}>
                 <Tag color="blue">{`${props.data.type}`}</Tag>
