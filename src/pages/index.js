@@ -4,9 +4,7 @@ import { Link, useStaticQuery } from "gatsby"
 import Layout from "../components/layout"
 import Image from "../components/image"
 import SEO from "../components/seo"
-
-
-
+import SpacesCard from "../components/SpacesCard"
 
 const IndexPage = () => {
 
@@ -20,6 +18,5 @@ const IndexPage = () => {
   </Layout>
   )
 }
-
 
 export default IndexPage

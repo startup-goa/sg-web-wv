@@ -1,0 +1,56 @@
+.cardBody {
+  padding: 1rem;
+}
+
+.thumbnailContainer {
+  min-height: 4.5rem;
+  /* background: rgb(165, 165, 165); */
+  border-radius: 2px;
+}
+
+.thumbnail {
+  width: 100%;
+  border: 1px solid rgb(165, 165, 165);
+  /* display: none; */
+}
+
+.content {
+  width: 100%;
+  padding: 0 0.5rem;
+}
+
+.title {
+  font-weight: bold;
+}
+
+.address {
+  display: flex;
+  align-items: center;
+}
+
+.locationIcon {
+  width: 1rem;
+  fill: rgb(61, 61, 61);
+  /* vertical-align: middle; */
+}
+
+.typeTag {
+  margin: 4px 0;
+}
+
+.pricing {
+}
+
+.facilities {
+}
+
+.contact {
+  align-items: center;
+}
+
+.contactIcon {
+  width: 1rem;
+  fill: rgb(61, 61, 61);
+  vertical-align: middle;
+  margin-right: 4px;
+}
