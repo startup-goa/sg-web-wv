@@ -1,104 +1,44 @@
 import React from "react"
-import { Card, Layout, Menu, Row, Col, Tag } from "antd"
-import coworkingImg from "./coworking.png"
-import { EnvironmentFilled, PhoneFilled, MailFilled } from "@ant-design/icons"
-import styles from "./index.module.css"
+import { Link } from "gatsby"
+import { Row, Col, Tag, Card } from "antd"
+import { EnvironmentFilled, TagOutlined, MailFilled } from "@ant-design/icons"
 
-const { Header } = Layout
-
-/**
- *
- * @param {{
- *  thumbnail: string,
- *  name: string,
- *  address: string,
- *  type: 'co-working' | 'cafe',
- *  pricing: string,
- *  facilities: string[],
- *  contactNumber: number,
- *  email: string,
- * }} param0
- */
-const SpacesCard = ({
-  thumbnail,
-  name,
-  address,
-  type,
-  pricing,
-  facilities,
-  contactNumber,
-  email,
-}) => {
+const SpaceCard = props => {
   return (
-    <Card bodyStyle={{ padding: 0 }}>
-      <Row className={styles.cardBody}>
-        <Col
-          className={styles.thumbnailContainer}
-          xs={6}
-          sm={5}
-          md={4}
-          lg={3}
-          xl={2}
-          xxl={2}
-        >
-          <img
-            src={thumbnail || coworkingImg}
-            alt="work-space-thumbnail"
-            className={styles.thumbnail}
-          />
-        </Col>
-        <Col xs={18} sm={19} md={20} lg={21} xl={22} xxl={22}>
-          <Row className={styles.content}>
-            <Col xs={16} sm={16} md={8} lg={8} xl={8} xxl={8}>
-              <div className={styles.title}>{name}</div>
-              {address && (
-                <div className={styles.address}>
-                  <EnvironmentFilled className={styles.locationIcon} />
-                  {address}
-                </div>
-              )}
-            </Col>
-            <Col xs={8} sm={8} md={8} lg={8} xl={8} xxl={8}>
-              {type === "co-working" && (
-                <Tag color="blue" className={styles.typeTag}>
-                  Co-Working
-                </Tag>
-              )}
-              {type === "cafe" && (
-                <Tag color="volcano" className={styles.typeTag}>
-                  Cafe
-                </Tag>
-              )}
-              <div className={styles.pricing}>{pricing}</div>
-            </Col>
-            <Col xs={24} sm={24} md={8} lg={8} xl={8} xxl={8}>
-              <div className={styles.facilities}>
-                {facilities?.map(facility => (
-                  <Tag color="default" key={"spaces.facility." + facility}>
-                    {facility}
-                  </Tag>
-                ))}
-              </div>
-              <div className={styles.contactContainer}>
-                {contactNumber && (
-                  <div>
-                    <PhoneFilled className={styles.contactIcon} />
-                    {contactNumber}
-                  </div>
-                )}
-                {email && (
-                  <div>
-                    <MailFilled className={styles.contactIcon} />
-                    {email}
-                  </div>
-                )}
-              </div>
-            </Col>
-          </Row>
-        </Col>
-      </Row>
-    </Card>
+    <Link to={`/spaces/${props.data.slug}`}>
+      <Card style={{ color: "#333333", marginBottom: 4 }} hoverable>
+        <Row className="event-card">
+          <Col md={3} sm={24} xs={24}>
+            <div className="image-holder"></div>
+          </Col>
+          <Col md={21}>
+            <Row>
+              <Col md={6} sm={18} xs={18}>
+                <b>{props.data.title}</b>
+              </Col>
+              <Col md={4} sm={4} xs={4}>
+                <Tag color="volcano">{`co-working`}</Tag>
+              </Col>
+              <Col md={6} sm={0} xs={0}>
+                <EnvironmentFilled style={{ marginRight: 8 }} />
+                {props.data.acf_fields.space_address}
+              </Col>
+            </Row>
+            <Row>
+              <Col md={6} sm={18} xs={18}>
+                <TagOutlined style={{marginRight: 8}} />
+                <React.Fragment>
+                {
+                  props.data.acf_fields.price_for_one_day?`${props.data.acf_fields.price_for_one_day} / day`: `-`
+                }
+                </React.Fragment>
+              </Col>
+            </Row>
+          </Col>
+        </Row>
+      </Card>
+    </Link>
   )
 }
 
-export default SpacesCard
+export default SpaceCard

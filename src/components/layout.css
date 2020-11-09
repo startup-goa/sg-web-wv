@@ -1,5 +1,4 @@
 footer{
-  margin-top: 2rem;
   position: fixed;
   bottom: 0;
   width: 100%;
@@ -7,6 +6,10 @@ footer{
   height: 10%;
   padding: 16px;
   color: white;
+}
+
+.content{
+  padding-bottom: 5%;
 }
 
 body{

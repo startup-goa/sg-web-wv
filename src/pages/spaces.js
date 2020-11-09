@@ -10,24 +10,32 @@ const SpacesPage = () => {
   const [data, setData] = useState([])
 
   useEffect(() => {
-    setData(apiData?.allWordpressWpEvents?.edges)
+    setData(apiData?.allWordpressWpSpaces?.edges)
     console.log("apiData", apiData)
   }, [])
 
   useEffect(() => {
-    console.log("api data", data)
+    console.log("spaces data", data)
   }, [data])
 
   const apiData = useStaticQuery(graphql`
     query Spaces {
-      allWordpressWpEvents {
+      allWordpressWpSpaces {
         edges {
           node {
+            id
             title
-            type
-            wordpress_id
             slug
-            date(formatString: "DD-MM-YYYY")
+            acf_fields {
+              contact_email
+              contact_phone
+              picture
+              price_for_one_day
+              price_for_one_month
+              space_address
+              space_detail
+              space_map
+            }
           }
         }
       }
@@ -37,27 +45,10 @@ const SpacesPage = () => {
   return (
     <Layout>
       <Row>
-        {/* <Col md={6}>
-          <Menu
-            defaultSelectedKeys={["upcoming"]}
-            style={{ borderRadius: 5, padding: 8 }}
-          >
-            <Menu.Item key="upcoming">Upcoming</Menu.Item>
-            <Menu.Item key="past">Past</Menu.Item>
-          </Menu>
-        </Col> */}
         <Col span={24}>
           {data.map(item => {
             return (
-              <SpacesCard
-                name={"Numadic IOT"}
-                address={"Panaji, GA"}
-                type={"cafe"}
-                pricing={"2000 / day"}
-                facilities={["Wifi", "Eateries", "3D printing"]}
-                contactNumber={9182736455}
-                email={"email@example.com"}
-              />
+              <SpacesCard data={item.node}/>
             )
           })}
         </Col>

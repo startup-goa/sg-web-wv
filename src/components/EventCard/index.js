@@ -7,41 +7,34 @@ import './index.css'
 
 const EventCard = props => {
   return (
-    <Link to={`/events/1`}>
-      <Card style={{color: "#333333", marginBottom: 4 }} hoverable >
+    <Link to={`/events/${props.data.slug}`}>
+      <Card style={{ color: "#333333", marginBottom: 4 }} hoverable>
         <Row className="event-card">
-          <Col md={3}>
+          <Col md={3} sm={24} xs={24}>
             <div className="image-holder"></div>
           </Col>
           <Col md={21}>
             <Row>
-              <Col md={6}>
-                <b>{props.data.acf_fields.start_date}</b>
+              <Col md={6} sm={18} xs={18}>
+                <b>{props.data.title}</b>
               </Col>
-              <Col md={4}>
+              <Col md={4} sm={4} xs={4}>
                 <Tag color="blue">{`${props.data.type}`}</Tag>
               </Col>
-              <Col md={6}>
-                <PhoneFilled style={{ marginRight: 4 }} />
-                +91 9673682842
+            </Row>
+            <Row style={{ marginTop: 4 }}>
+              <Col md={8} sm={24} xs={24} className="event-name">
+                {props.data.acf_fields.start_date}
               </Col>
             </Row>
-            <Row>
-              <Col className="event-name" span={8}>
-                {props.data.title}
-              </Col>
-              <Col offset={2} md={6}>
-                <MailFilled style={{ marginRight: 4 }} />
-                email@startupgoa.org
-              </Col>
-            </Row>
-            <Row>
+            <Row style={{ marginTop: 4 }}>
               <Col md={6}>
-                <EnvironmentFilled style={{ marginRight: 4 }} />
-                Dona Paula
+                <EnvironmentFilled style={{ marginRight: 8 }} />
+                {props.data.location_address}
               </Col>
             </Row>
           </Col>
+          <Col span={24}></Col>
         </Row>
       </Card>
     </Link>

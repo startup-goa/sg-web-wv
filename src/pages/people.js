@@ -31,6 +31,7 @@ const PeoplePage = () => {
               website
               description_
             }
+            role
             wordpress_id
             title
             type

@@ -1,0 +1,12 @@
+.title{
+    background-color: white;
+    border-radius: 5;
+    padding: 16px
+}
+
+.description{
+    background-color: white;
+    border-radius: 5;
+    padding: 16px;
+    margin-top: 8px;
+}

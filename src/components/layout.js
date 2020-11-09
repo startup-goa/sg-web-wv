@@ -29,7 +29,7 @@ const CustomLayout = ({ children, getCurrentPage }) => {
           getCurrentPage={page => getCurrentPage(page)}
         />
         <div>
-          <main
+          <main className='content'
             style={{
               paddingLeft: 8,
               marginRight: 8,

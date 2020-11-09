@@ -21,11 +21,11 @@ const PeopleCard = props => {
           </Col>
           <Col md={21}>
             <Row>
-              <Col md={6}>
+              <Col md={10}>
                 <b>{props.data.title}</b>
               </Col>
-              <Col md={4}>
-                <Tag color="blue">{`${props.data.type}`}</Tag>
+              <Col md={10}>
+                <Tag color="blue">{`${props.data.acf_fields.role == 7 ? 'Compnay Secretary': props.data.role == 8? 'Chartered Accountant': 'Lawyer' }`}</Tag>
               </Col>
               <Col md={props.data.acf_fields.linkedin_ ? 2 : 0}>
                 <a
