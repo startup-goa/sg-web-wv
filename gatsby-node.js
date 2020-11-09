@@ -52,4 +52,15 @@ exports.createPages = async ({ graphql, actions }) => {
         },
       })
     })
+
+    const peopleTemplate = path.resolve(`src/templates/people-page.js`)
+    pagesQuery.data.allWordpressWpPeople.nodes.forEach(node => {
+      createPage({
+        path: `/people/${String(node.slug)}`,
+        component: peopleTemplate,
+        context: {
+          id: node.id,
+        },
+      })
+    })
 }
